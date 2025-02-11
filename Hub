@@ -1,0 +1,200 @@
+-- Oringinal loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/GaM3rtff/VoidX/refs/heads/main/Hub'))()
+
+
+local Hub = Rayfield:CreateWindow({
+   Name = "VoidX | Hub",
+   Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by Sirius",
+   Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = true, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+
+   Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "xcvzZHsfRt", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "VoidX | Key System",
+      Subtitle = "Discord.gg/xcvzZHsfRt",
+      Note = "Join the discord server in order to get the key", -- Use this to tell the user how to get a key
+      FileName = "SavedKey", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"VoidX2025"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local HubsTab = Hub:CreateTab("Scripts/Hubs", 4483362458) -- Title, Image
+local PlayerTab = Hub:CreateTab("Player", 4483362458) -- Title, Image
+local OthersTab = Hub:CreateTab("Others", 4483362458) -- Title, Image
+
+-- Hubs Tab
+local Note = HubsTab:CreateSection("Note: If you cannot find a script you can search for it at the top right")
+local Button = HubsTab:CreateButton({
+   Name = "Project Monsters (INF GEMS)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Project%20Monster.txt"))()
+   end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "No-Scope Arcade (OP)",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/No-Scope%20Arcade.txt"))()
+   end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Operation Genesis (INF GENOME)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Operation%20Genesis"))()
+   end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Sushi Shop Simulator (INF MONEY)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Sushi%20Shop%20Simulator.txt"))()
+   end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Neighborhood Tycoon (INF MONEY)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Neighborhood%20Tycoon.txt"))()   
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "House Party Tycoon (INF MONEY)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/House%20Party%20Tycoon.txt"))() 
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Gym Simulator (INF MONEY + ALL GAMEPASSES FOR FREE)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/Gym%20Simulator.txt"))()
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "PLAY OR DIE (INF MONEY)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/PLAY%20OR%20DIE.txt"))()	
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "100 Players Slippery Stair (OP)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Aqua-Hub/refs/heads/main/100%20Players%20Slippery%20Stair.txt"))()
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Pogo Simulator (INF MONEY)",
+   Callback = function()
+local args = {
+    [1] = 3000000000000000000,
+    [2] = workspace:WaitForChild("earth"):WaitForChild("collectables"):WaitForChild("coin")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("coinCollect"):FireServer(unpack(args))
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Trick Shot Simulator (INF MONEY)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/Scriptblox-ExploitFin/refs/heads/main/Trick%20shot%20simulator"))()
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Mega Domino Playground (OP)",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploiterGuy/FBC/refs/heads/main/Open%20Sourced"))()
+	end,
+})
+
+local Button = HubsTab:CreateButton({
+   Name = "Arsenal Weed Hub",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ex55/weed-client/refs/heads/main/main.lua"))()
+	end,
+})
+
+-- Player Tab
+local PlayertabSpacer = PlayerTab:CreateSection("")
+ local WalkspeedSlider = PlayerTab:CreateSlider({
+    Name = "WalkSpeed",
+    Range = {1, 200},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end,
+ })
+
+ local JumppowerSlider = PlayerTab:CreateSlider({
+    Name = "JumpPower",
+    Range = {1, 200},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = 50,
+    Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end,
+ })
+
+local InfiniteJumpEnabled = false
+
+local Toggleinfjump = PlayerTab:CreateToggle({
+    Name = "Infinite Jump",
+    CurrentValue = false,
+    Flag = "Toggle1",
+    Callback = function(value)
+        InfiniteJumpEnabled = value -- Set the global variable to the toggle state
+    end
+})
+
+game:GetService("UserInputService").JumpRequest:Connect(function()
+    if InfiniteJumpEnabled then
+        local player = game:GetService("Players").LocalPlayer
+        if player and player.Character then
+            local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+            end
+        end
+    end
+end)
+
+
+-- Others Tab
+local OtherstabSpacer = OthersTab:CreateSection("")
+local InfiniteYeildButton = OthersTab:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end,
+})
+
+
+local DiscordButton = OthersTab:CreateButton({
+   Name = "Copy Discord Link",
+   Callback = function()
+       setclipboard("https://discord.gg/xcvzZHsfRt")
+   end,
+})
