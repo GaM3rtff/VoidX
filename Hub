@@ -1615,41 +1615,41 @@ function RayfieldLibrary:CreateWindow(Settings)
 	end
 
 	if (Settings.KeySystem) then
-		if not Settings.KeySettings then
-			Passthrough = true
-			return
-		end
+    if not Settings.KeySettings then
+        Passthrough = true
+        return
+    end
 
-		if isfolder and not isfolder(RayfieldFolder.."/Key System") then
-			makefolder(RayfieldFolder.."/Key System")
-		end
+    if typeof(Settings.KeySettings.Key) == "string" then
+        Settings.KeySettings.Key = {Settings.KeySettings.Key}
+    end
 
-		if typeof(Settings.KeySettings.Key) == "string" then Settings.KeySettings.Key = {Settings.KeySettings.Key} end
+    if Settings.KeySettings.GrabKeyFromSite then
+        for i, Key in ipairs(Settings.KeySettings.Key) do
+            local Success, Response = pcall(function()
+                Settings.KeySettings.Key[i] = tostring(game:HttpGet(Key):gsub("[\n\r]", " "))
+                Settings.KeySettings.Key[i] = string.gsub(Settings.KeySettings.Key[i], " ", "")
+            end)
+            if not Success then
+                print("Rayfield | "..Key.." Error " ..tostring(Response))
+                warn('Check docs.sirius.menu for help with Rayfield specific development.')
+            end
+        end
+    end
 
-		if Settings.KeySettings.GrabKeyFromSite then
-			for i, Key in ipairs(Settings.KeySettings.Key) do
-				local Success, Response = pcall(function()
-					Settings.KeySettings.Key[i] = tostring(game:HttpGet(Key):gsub("[\n\r]", " "))
-					Settings.KeySettings.Key[i] = string.gsub(Settings.KeySettings.Key[i], " ", "")
-				end)
-				if not Success then
-					print("Rayfield | "..Key.." Error " ..tostring(Response))
-					warn('Check docs.sirius.menu for help with Rayfield specific development.')
-				end
-			end
-		end
+    if not Settings.KeySettings.FileName then
+        Settings.KeySettings.FileName = "No file name specified"
+    end
 
-		if not Settings.KeySettings.FileName then
-			Settings.KeySettings.FileName = "No file name specified"
-		end
+    if isfile and isfile(RayfieldFolder.."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
+        for _, MKey in ipairs(Settings.KeySettings.Key) do
+            if string.find(readfile(RayfieldFolder.."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
+                Passthrough = true
+            end
+        end
+    end
+end
 
-		if isfile and isfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension) then
-			for _, MKey in ipairs(Settings.KeySettings.Key) do
-				if string.find(readfile(RayfieldFolder.."/Key System".."/"..Settings.KeySettings.FileName..ConfigurationExtension), MKey) then
-					Passthrough = true
-				end
-			end
-		end
 
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2, 5)
