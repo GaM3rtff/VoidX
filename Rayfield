@@ -2014,8 +2014,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
 
-			Button.ElementIndicator.Text = "Execute"
-			Button.ElementIndicator.TextColor3 = Color3.FromRGB(89, 15, 239)
+			--Button.ElementIndicator.Text = "Execute"
+			--Button.ElementIndicator.TextColor3 = Color3.FromRGB(89, 15, 239)
 
 			TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
