@@ -2013,7 +2013,10 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.BackgroundTransparency = 1
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
+			Button.Title.TextColor3 = Color3.fromRGB("89, 15, 239")
 
+
+			Button.ElementIndicator.Visible = false
 			Button.ElementIndicator.Text = "Execute"
 			Button.ElementIndicator.TextColor3 = Color3.fromRGB(89, 15, 239)
 
