@@ -176,7 +176,7 @@ local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
 		VoidX = {
-			TextColor = Color3.fromRGB(89, 15, 239),
+			TextColor = Color3.fromRGB(240, 240, 240),
 
 			Background = Color3.fromRGB(25, 25, 25),
 			Topbar = Color3.fromRGB(89, 15, 239),
@@ -2013,6 +2013,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.BackgroundTransparency = 1
 			Button.UIStroke.Transparency = 1
 			Button.Title.TextTransparency = 1
+
+			Button.Title.TextColor3 = Color3.fromRGB("89, 15, 239")
+			--Button.UIStroke.Color3
 
 
 			Button.ElementIndicator.Visible = false
