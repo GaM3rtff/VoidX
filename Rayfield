@@ -3419,7 +3419,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Topbar.BackgroundTransparency = 1
 	Topbar.Divider.Size = UDim2.new(0, 0, 0, 1)
 	Topbar.Divider.BackgroundColor3 = SelectedTheme.ElementStroke
-	Topbar.Divider.BackgroundTransparency = 0
+	Topbar.Divider.Visible = false
 	Topbar.CornerRepair.BackgroundTransparency = 1
 	Topbar.Title.TextTransparency = 1
 	Topbar.Search.ImageTransparency = 1
