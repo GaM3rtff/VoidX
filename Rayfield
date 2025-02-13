@@ -192,7 +192,7 @@ local RayfieldLibrary = {
 			SelectedTabTextColor = Color3.fromRGB(250, 250, 250),
 
 			ElementBackground = Color3.fromRGB(35, 35, 35),
-			ElementBackgroundHover = Color3.fromRGB(45, 8, 120),
+			ElementBackgroundHover = Color3.fromRGB(35, 35, 35),
 			SecondaryElementBackground = Color3.fromRGB(25, 25, 25),
 			ElementStroke = Color3.fromRGB(50, 50, 50),
 			SecondaryElementStroke = Color3.fromRGB(40, 40, 40),
@@ -2015,7 +2015,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			Button.Title.TextTransparency = 1
 
 			Button.ElementIndicator.Text = "Execute"
-			--Button.ElementIndicator.TextColor3 = Color3.FromRGB(89, 15, 239)
+			Button.ElementIndicator.TextColor3 = Color3.fromRGB(89, 15, 239)
 
 			TweenService:Create(Button, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0}):Play()
 			TweenService:Create(Button.UIStroke, TweenInfo.new(0.7, Enum.EasingStyle.Exponential), {Transparency = 0}):Play()
