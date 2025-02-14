@@ -176,7 +176,7 @@ local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
 		VoidX = {
-			TopbarDivider = Color3.fromRGB("255, 0, 0"),
+			TopbarDivider = Color3.fromRGB(255, 0, 0),
 			TextColor = Color3.fromRGB(240, 240, 240),
 
 			Background = Color3.fromRGB(25, 25, 25),
