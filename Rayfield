@@ -176,6 +176,7 @@ local RayfieldLibrary = {
 	Flags = {},
 	Theme = {
 		VoidX = {
+			TopbarDivider = Color3.fromRGB("255, 0, 0"),
 			TextColor = Color3.fromRGB(240, 240, 240),
 
 			Background = Color3.fromRGB(25, 25, 25),
@@ -723,7 +724,7 @@ local function ChangeTheme(Theme)
 	Rayfield.Main.Topbar.Search.ImageColor3 = SelectedTheme.TextColor
 	if Topbar:FindFirstChild('Settings') then
 		Rayfield.Main.Topbar.Settings.ImageColor3 = SelectedTheme.TextColor
-		Rayfield.Main.Topbar.Divider.BackgroundColor3 = SelectedTheme.ElementStroke
+		Rayfield.Main.Topbar.Divider.BackgroundColor3 = SelectedTheme.TopbarDivider
 	end
 
 	Main.Search.BackgroundColor3 = SelectedTheme.TextColor
